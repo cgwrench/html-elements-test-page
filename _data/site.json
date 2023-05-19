@@ -1,0 +1,14 @@
+{
+    "title": "Semantic, accessible HTML",
+    "url": "https://example.com/",
+    "language": "en-GB",
+    "description": "A collection of semantic, accessible HTML patterns.",
+    "author": {
+        "name": "Chris Wrench",
+        "email": "cgwrench@gmail.com",
+        "url": "https://github.com/cgwrench/"
+    },
+    "repository": {
+        "url": "https://github.com/cgwrench/html-elements-test-page/blob/main"
+    }
+}

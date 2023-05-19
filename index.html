@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML elements test page</title>
+    <meta name="description" content="Examples of the elements of HTML">
+</head>
+<body>
+    <main>
+        <h1 id="html-elements-test-page">HTML elements test page</h1>
+<p>This page includes examples of most of <a href="https://html.spec.whatwg.org/multipage/semantics.html#semantics">the elements of HTML</a>.</p>
+<p>Inspired by <a href="https://poormansstyleguide.com/">Poor Man’s Styleguide</a>, this
+page borrows heavily from these excellent resources:</p>
+<ul>
+<li><a href="https://meiert.com/en/indices/html-elements/">HTML Elements Index</a>,
+by <a href="https://meiert.com/">Jens Oliver Meiert</a></li>
+<li><a href="https://cbracco.github.io/html5-test-page/">HTML5 Test Page</a>,
+by <a href="https://chrisbracco.com/">Chris Bracco</a></li>
+<li><a href="https://alexandersandberg.github.io/html5-elements-tester/">HTML5 elements tester</a>,
+by <a href="https://alexandersandberg.com/">Alexander Sandberg</a></li>
+<li><a href="https://thepaciellogroup.github.io/AT-browser-tests/">HTML Element test file index</a>,
+by <a href="https://www.tpgi.com/">TPGi</a></li>
+<li><a href="https://codepen.io/plfstr/full/zYqQeRw">HTML Tags Memory Test</a>,
+by <a href="https://paulfosterdesign.co.uk/">Paul Foster</a></li>
+<li><a href="https://snipplr.com/view/8121/html-test-page-for-css-style-guide">HTML Test Page for CSS Style Guide</a></li>
+</ul>
+<p>Many of the samples and descriptions included here are adapted from the
+<a href="https://html.spec.whatwg.org/">current HTML specification</a> and the
+<a href="https://web-platform-tests.org/">web-platform-tests project</a>.</p>
+<p>At the time of writing, this page includes examples for most of the 114
+<em>current</em> elements of HTML<sup id="fnref:1"><a href="#fn:1" aria-describedby="footnotes-heading">1</a></sup>, as defined by the
+<a href="https://html.spec.whatwg.org/">HTML living specification</a>. There are a whole
+load more elements that used to be part of HTML, but have since been
+deprecated.</p>
+<p>This page was last updated on 19 May 2023.</p>
+<p>If you’ve got any questions or comments about this page, or if you’ve found a
+mistake, please <a href="mailto:cgwrench@gmail.com">get in touch</a>.</p>
+<noscript>
+    <p>
+        <strong>Note</strong>: Some of the examples on this page require
+        scripting to work correctly. Follow these
+        <a href="https://www.enable-javascript.com/">
+        instructions for how to enable JavaScript in your web browser
+        </a>
+        if you'd like to see these examples in action.
+    </p>
+</noscript>
+<p><nav aria-labelledby="toc-heading">    <h2 id="toc-heading">Table of contents</h2>
+<ul><li><a href="#the-document-element">The document element</a></li><li><a href="#document-metadata">Document metadata</a></li><li><a href="#sections">Sections</a><ul><li><a href="#document-content">Document content</a></li><li><a href="#article-contents">Article contents</a></li><li><a href="#generic-sections">Generic sections</a></li><li><a href="#navigation">Navigation</a></li><li><a href="#asides">Asides</a></li><li><a href="#headings">Headings</a></li><li><a href="#heading-groups">Heading groups</a></li><li><a href="#headers">Headers</a></li><li><a href="#footers">Footers</a></li><li><a href="#addresses">Addresses</a></li></ul></li><li><a href="#grouping-content">Grouping content</a><ul><li><a href="#paragraphs">Paragraphs</a></li><li><a href="#horizontal-rule">Horizontal rule</a></li><li><a href="#pre-formatted-text">Pre-formatted text</a></li><li><a href="#blockquotes">Blockquotes</a></li><li><a href="#ordered-list">Ordered list</a></li><li><a href="#unordered-list">Unordered list</a></li><li><a href="#menu-list">Menu list</a></li><li><a href="#list-items">List items</a></li><li><a href="#definition-list">Definition list</a></li><li><a href="#figures">Figures</a></li><li><a href="#main-content">Main content</a></li><li><a href="#search">Search</a></li><li><a href="#generic-container">Generic container</a></li></ul></li><li><a href="#text-level-semantics">Text-level semantics</a><ul><li><a href="#links">Links</a></li><li><a href="#stressed-emphasis">Stressed emphasis</a></li><li><a href="#strong-importance">Strong importance</a></li><li><a href="#small-print">Small print</a></li><li><a href="#strikethrough">Strikethrough</a></li><li><a href="#citations">Citations</a></li><li><a href="#inline-quotes">Inline quotes</a></li><li><a href="#definition">Definition</a></li><li><a href="#abbreviation">Abbreviation</a></li><li><a href="#ruby-annotations">Ruby annotations</a></li><li><a href="#data">Data</a></li><li><a href="#time">Time</a></li><li><a href="#code">Code</a></li><li><a href="#variables">Variables</a></li><li><a href="#sample-output">Sample output</a></li><li><a href="#keyboard-entry">Keyboard entry</a></li><li><a href="#subscripts-and-superscripts">Subscripts and superscripts</a></li><li><a href="#alternative-voice">Alternative voice</a></li><li><a href="#emboldened">Emboldened</a></li><li><a href="#unarticulated-annotated-text">Unarticulated annotated text</a></li><li><a href="#marked-or-highlighted-text">Marked or highlighted text</a></li><li><a href="#bidirectional-text">Bidirectional text</a></li><li><a href="#content-spans">Content spans</a></li><li><a href="#line-breaks">Line breaks</a></li><li><a href="#line-break-opportunity">Line break opportunity</a></li></ul></li><li><a href="#edits">Edits</a><ul><li><a href="#additions">Additions</a></li><li><a href="#deletions">Deletions</a></li></ul></li><li><a href="#embedded-content">Embedded content</a><ul><li><a href="#pictures">Pictures</a></li><li><a href="#media-sources">Media sources</a></li><li><a href="#images">Images</a></li><li><a href="#inline-frames">Inline frames</a></li><li><a href="#embedded-external-content">Embedded external content</a></li><li><a href="#external-objects">External objects</a></li><li><a href="#embedded-video">Embedded video</a></li><li><a href="#embedded-audio">Embedded audio</a></li><li><a href="#embedded-text-tracks">Embedded text tracks</a></li><li><a href="#image-maps">Image maps</a></li><li><a href="#mathematical-markup">Mathematical markup</a></li><li><a href="#scalable-vector-graphics">Scalable vector graphics</a></li></ul></li><li><a href="#tabular-data">Tabular data</a></li><li><a href="#forms">Forms</a><ul><li><a href="#interactive-forms">Interactive forms</a></li><li><a href="#form-field-label">Form field label</a></li><li><a href="#form-control">Form control</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#select-list">Select list</a></li><li><a href="#data-list">Data list</a></li><li><a href="#option-group">Option group</a></li><li><a href="#option">Option</a></li><li><a href="#multi-line-text">Multi-line text</a></li><li><a href="#output">Output</a></li><li><a href="#progress">Progress</a></li><li><a href="#scalar-measures">Scalar measures</a></li><li><a href="#form-control-groups">Form control groups</a></li></ul></li><li><a href="#interactive-elements">Interactive elements</a><ul><li><a href="#details-disclosure">Details disclosure</a></li><li><a href="#dialog-boxes">Dialog boxes</a></li></ul></li><li><a href="#scripting">Scripting</a><ul><li><a href="#dynamic-scripts">Dynamic scripts</a></li><li><a href="#content-template">Content template</a></li><li><a href="#web-component-slots">Web component slots</a></li><li><a href="#canvas">Canvas</a></li></ul></li></ul></nav></p>
+<h2 id="the-document-element" tabindex="-1"><a href="#the-document-element"><span>The document element</span></a></h2>
+<p>The <a href="https://html.spec.whatwg.org/#the-html-element"><code>html</code></a> element represents the root of an
+<abbr title="HyperText Markup Language">HTML</abbr> document. All the other
+elements of HTML must be descendants of this element.</p>
+<h2 id="document-metadata" tabindex="-1"><a href="#document-metadata"><span>Document metadata</span></a></h2>
+<p><strong>Note</strong>: Because the elements in this section represent <em>metadata</em> about the
+current HTML document, they don’t render anything on the page. To see examples
+of these elements in action,
+<a href="https://github.com/cgwrench/html-elements-test-page/blob/index.html">view the source for this page</a>.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-head-element"><code>head</code></a> element represents a collection of metadata for the current
+web page. The other elements in this section are descendants of this element.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-title-element"><code>title</code></a> element represents the title or name of the current web
+page.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-base-element"><code>base</code></a> element specifies the base
+<abbr title="Uniform Resource Locator">URL</abbr> to use for all relative URLs
+in a document.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-link-element"><code>link</code></a> element links the current web page to other resources.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-meta-element"><code>meta</code></a> element represents other metadata that cannot be expressed
+using the <code>title</code>, <code>base</code>, <code>link</code>, <code>style</code>, and <code>script</code> elements.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-style-element"><code>style</code></a> element is used to embed CSS style sheets in the current
+web page.</p>
+<h2 id="sections" tabindex="-1"><a href="#sections"><span>Sections</span></a></h2>
+<h3 id="document-content" tabindex="-1"><a href="#document-content"><span>Document content</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-body-element"><code>body</code></a> element represents the contents of the document.</p>
+<p>The content of this page is contained within a <code>body</code> element.</p>
+<h3 id="article-contents" tabindex="-1"><a href="#article-contents"><span>Article contents</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-article-element"><code>article</code></a> element represents a self-contained part of a page,
+which is distributable outside of the page it’s on.</p>
+<!-- No example yet -->
+<h3 id="generic-sections" tabindex="-1"><a href="#generic-sections"><span>Generic sections</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-section-element"><code>section</code></a> element represents a generic section of a page.</p>
+<!-- No example yet -->
+<h3 id="navigation" tabindex="-1"><a href="#navigation"><span>Navigation</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-nav-element"><code>nav</code></a> element represents a section of a page that links to other
+pages or to parts within the page.</p>
+<p>See the <a href="#table-of-contents">table of contents</a>, above, for an example of the
+<code>nav</code> element in action.</p>
+<h3 id="asides" tabindex="-1"><a href="#asides"><span>Asides</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-aside-element"><code>aside</code></a> element represents a part of a page which is only
+indirectly related to the main content of the page.</p>
+<!-- No example yet -->
+<h3 id="headings" tabindex="-1"><a href="#headings"><span>Headings</span></a></h3>
+<p>This page uses a single <a href="https://html.spec.whatwg.org/#the-h1-element"><code>h1</code></a> element as the page title — see
+<a href="#html-elements-test-page">“HTML elements test page”</a>, above. Subsequent
+headings should start with <a href="https://html.spec.whatwg.org/#the-h2-element"><code>h2</code></a> — see <a href="#sections">“Sections”</a>, above,
+for an example <code>h2</code>. More than one <code>h2</code> may be used per page.</p>
+<p>The heading for this section is a <a href="https://html.spec.whatwg.org/#the-h3-element"><code>h3</code></a> element.</p>
+<h4 id="fourth-level-headings" tabindex="-1"><a href="#fourth-level-headings"><span>Fourth-level headings</span></a></h4>
+<p>The heading above is a <a href="https://html.spec.whatwg.org/#the-h4-element"><code>h4</code></a> element.</p>
+<h5>Fifth-level headings</h5>
+<p>The heading above is a <a href="https://html.spec.whatwg.org/#the-h5-element"><code>h5</code></a> element.</p>
+<h5>Sixth-level headings</h5>
+<p>The heading above is a <a href="https://html.spec.whatwg.org/#the-h6-element"><code>h6</code></a> element.</p>
+<h3 id="heading-groups" tabindex="-1"><a href="#heading-groups"><span>Heading groups</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-hgroup-element"><code>hgroup</code></a> element represents a heading and related content. The
+element may be used to group an <code>h1</code>–<code>h6</code> element with one or more <code>p</code> elements
+containing content representing a subheading, alternative title, or tagline.
+For example:</p>
+<hgroup>
+    <h4>Dr. Strangelove</h4>
+    <p>Or: How I Learned to Stop Worrying and Love the Bomb</p>
+</hgroup>
+<h3 id="headers" tabindex="-1"><a href="#headers"><span>Headers</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-header-element"><code>header</code></a> element represents a group of introductory or
+navigational aids.</p>
+<!-- No example yet -->
+<h3 id="footers" tabindex="-1"><a href="#footers"><span>Footers</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-footer-element"><code>footer</code></a> element represents a footer, typically containing
+information about the author of the page or section, copyright data or links to
+related documents.</p>
+<!-- No example yet -->
+<h3 id="addresses" tabindex="-1"><a href="#addresses"><span>Addresses</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-address-element"><code>address</code></a> element represents the contact information for current
+page (or an <code>article</code> within the page, if the <code>address</code> element is nested in an
+<code>article</code> element). For example:</p>
+<address>
+    For more details, contact
+    <a href="mailto:js@example.com">John Smith</a>.
+</address>
+<p>The <code>address</code> element is not be used to represent arbitrary addresses (e.g.
+postal addresses), unless those addresses are in fact the relevant contact
+information. The <code>p</code> element is the appropriate element for marking up postal
+addresses in general.</p>
+<h2 id="grouping-content" tabindex="-1"><a href="#grouping-content"><span>Grouping content</span></a></h2>
+<h3 id="paragraphs" tabindex="-1"><a href="#paragraphs"><span>Paragraphs</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-p-element"><code>p</code></a> element represents a paragraph.</p>
+<p>All paragraphs on this page are wrapped in <code>p</code> elements.</p>
+<h3 id="horizontal-rule" tabindex="-1"><a href="#horizontal-rule"><span>Horizontal rule</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-hr-element"><code>hr</code></a> element represents a paragraph-level thematic break. For
+example, a scene change in a story, or a transition to another topic within a
+section of a reference book. For example:</p>
+<hr />
+<h3 id="pre-formatted-text" tabindex="-1"><a href="#pre-formatted-text"><span>Pre-formatted text</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-pre-element"><code>pre</code></a> element represents a block of preformatted text, in which
+structure is represented by typographic conventions rather than by elements.
+For example, an e-mail, fragments of computer code or ASCII art. Here’s an
+example showing the printable characters of ASCII:</p>
+<pre>
+! " # $ % & ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~
+</pre>
+<h3 id="blockquotes" tabindex="-1"><a href="#blockquotes"><span>Blockquotes</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-blockquote-element"><code>blockquote</code></a> element represents a section that is being
+quoted from another source. For example:</p>
+<blockquote>
+<p>I contend that we are both atheists. I just believe in one fewer god than you
+do. When you understand why you dismiss all the other possible gods, you will
+understand why I dismiss yours.</p>
+</blockquote>
+<p>Attributions should be provided for quotations. See the
+<a href="#figures"><code>figure</code> element</a>, below.</p>
+<h3 id="ordered-list" tabindex="-1"><a href="#ordered-list"><span>Ordered list</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-ol-element"><code>ol</code></a> element represents a list of items, where the items have been
+intentionally ordered, such that changing the order would change the meaning
+of the document.</p>
+<ol>
+<li>This is the first item in an ordered list.</li>
+<li>This is the second item, which itself contains another list.
+<ol>
+<li>This is the first item of the inner list, which is also ordered.</li>
+<li>This is the second item.</li>
+</ol>
+</li>
+<li>This is the final item in the list.</li>
+</ol>
+<h3 id="unordered-list" tabindex="-1"><a href="#unordered-list"><span>Unordered list</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-ul-element"><code>ul</code></a> element represents a list of items, where the order of the items
+is not important — that is, where changing the order would not materially
+change the meaning of the document. For example:</p>
+<ul>
+<li>United Kingdom of Great Britain and Northern Ireland:
+<ul>
+<li>England</li>
+<li>Scotland</li>
+<li>Wales</li>
+<li>Northern Ireland</li>
+</ul>
+</li>
+<li>Republic of Ireland</li>
+<li>Isle of Man</li>
+<li>Channel Islands:
+<ul>
+<li>Bailiwick of Guernsey</li>
+<li>Bailiwick of Jersey</li>
+</ul>
+</li>
+</ul>
+<h3 id="menu-list" tabindex="-1"><a href="#menu-list"><span>Menu list</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-menu-element"><code>menu</code></a> element represents an unordered list of command that a user
+can perform or activate. For example:</p>
+<menu>
+   <li>
+       <button>Copy</button>
+   </li>
+   <li>
+       <button>Cut</button>
+   </li>
+   <li>
+       <button>Paste</button>
+   </li>
+</menu>
+<h3 id="list-items" tabindex="-1"><a href="#list-items"><span>List items</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-li-element"><code>li</code></a> element represents a list item. It’s used as a child of an <code>ol</code>,
+<code>ul</code>, or <code>menu</code> element. See examples of these, above, for usage of the
+<code>li</code> element.</p>
+<h3 id="definition-list" tabindex="-1"><a href="#definition-list"><span>Definition list</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-dl-element"><code>dl</code></a> element represents a definition list, a collection of terms and
+descriptions. For example:</p>
+<dl>
+    <dt>Beast of Bodmin</dt>
+    <dd>A large feline inhabiting Bodmin Moor.</dd>
+    <dt>Morgawr</dt>
+    <dd>A sea serpent.</dd>
+    <dt>Owlman</dt>
+    <dd>A giant owl-like creature.</dd>
+</dl>
+<h3 id="figures" tabindex="-1"><a href="#figures"><span>Figures</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-figure-element"><code>figure</code></a> element represents some flow content, optionally with a
+caption, represented by the <a href="https://html.spec.whatwg.org/#the-figcaption-element"><code>figcaption</code></a> element, that is
+self-contained (like a complete sentence) and is typically referenced as a
+single unit from the main flow of the document.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-figure-element"><code>figure</code></a> element can be used to annotate illustrations, diagrams,
+photos, code listings, etc., often with a citation for the excerpted content.
+For example:</p>
+<figure>
+    <blockquote>
+        <p>The truth may be puzzling. It may take some work to grapple
+        with. It may be counterintuitive. It may contradict deeply held
+        prejudices. It may not be consonant with what we desperately want
+        to be true. But our preferences do not determine what's true. We
+        have a method, and that method helps us to reach not absolute
+        truth, only asymptotic approaches to the truth — never there, just
+        closer and closer, always finding vast new oceans of undiscovered
+        possibilities. Cleverly designed experiments are the key.</p>
+    </blockquote>
+    <figcaption>Carl Sagan, in "<cite>Wonder and Skepticism</cite>", from
+    the <cite>Skeptical Inquirer</cite> Volume 19, Issue 1
+    (January-February 1995)</figcaption>
+</figure>
+<h3 id="main-content" tabindex="-1"><a href="#main-content"><span>Main content</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-main-element"><code>main</code></a> element represents the dominant contents of the document.</p>
+<p>The content of this page is contained within a <code>main</code> element.</p>
+<h3 id="search" tabindex="-1"><a href="#search"><span>Search</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-search-element"><code>search</code></a> element represents a part of page that contains a set of
+form controls or other content related to performing a search or filtering
+content. This could be a search of the web site or application; a way of
+searching or filtering search results on the current web page; or a global
+or Internet-wide search function.</p>
+<search>
+    <form>
+      <label for="query">Search term</label>
+        <input id="query" name="q" type="search">
+        <button type="submit">Search</button>
+    </form>
+</search>
+<h3 id="generic-container" tabindex="-1"><a href="#generic-container"><span>Generic container</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-div-element"><code>div</code></a> element is a generic container for a group of elements. It has
+no special meaning of it’s own.</p>
+<p>It’s typically used to wrap a group of elements for styling purposes.</p>
+<!-- No example yet -->
+<p>The <cite>HTML Living Standard</cite> notes that:</p>
+<blockquote>
+<p>Authors are strongly encouraged to view the <code>div</code> element as an element of
+last resort, for when no other element is suitable. Use of more appropriate
+elements instead of the <code>div</code> element leads to better accessibility for
+readers and easier maintainability for authors.</p>
+</blockquote>
+<h2 id="text-level-semantics" tabindex="-1"><a href="#text-level-semantics"><span>Text-level semantics</span></a></h2>
+<h3 id="links" tabindex="-1"><a href="#links"><span>Links</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-a-element"><code>a</code></a> element represents a hyperlink to another page or to another part
+of the current page. For example:</p>
+<p><a href="#top">Back to the top of the page</a></p>
+<p>If an <code>a</code> element doesn’t have a <code>href</code> attribute, it represents a placeholder
+for where a link might otherwise have been placed, if it had been relevant.
+For example:</p>
+<p><a name="lighthouse-ignore">Current page</a></p>
+<h3 id="stressed-emphasis" tabindex="-1"><a href="#stressed-emphasis"><span>Stressed emphasis</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-em-element"><code>em</code></a> element represents stress emphasis of its contents. For example:</p>
+<p><em>Cats</em> are cute animals.</p>
+<h3 id="strong-importance" tabindex="-1"><a href="#strong-importance"><span>Strong importance</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-strong-element"><code>strong</code></a> element represents strong importance, seriousness, or
+urgency for its contents. For example:</p>
+<p>
+    <strong>Warning.</strong> This dungeon is dangerous. <strong>Avoid the
+    ducks.</strong> Take any gold you find. <strong><strong>Do not take any of
+    the diamonds</strong>, they are explosive and <strong>will destroy
+    anything within ten meters.</strong></strong> You have been warned.
+</p>
+<h3 id="small-print" tabindex="-1"><a href="#small-print"><span>Small print</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-small-element"><code>small</code></a> element represents side comments such as small print.
+Small print typically features disclaimers, caveats, legal restrictions, or
+copyrights. Small print is also sometimes used for attribution, or for
+satisfying licensing requirements. For example:</p>
+<p><small>Continued use of this service will result in a kiss.</small></p>
+<h3 id="strikethrough" tabindex="-1"><a href="#strikethrough"><span>Strikethrough</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-s-element"><code>s</code></a> element is used to represent content that is no longer accurate or
+relevant. The <code>s</code> element is not appropriate when indicating document edits;
+to mark a span of text as having been removed from a document, use the <code>del</code>
+element. For example:</p>
+<p>
+    Buy our Iced Tea and Lemonade!<br>
+    <s>Recommended retail price: $3.99 per bottle</s><br>
+    <strong>Now selling for just $2.99 a bottle!</strong>
+</p>
+<h3 id="citations" tabindex="-1"><a href="#citations"><span>Citations</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-cite-element"><code>cite</code></a> element represents the title of a work (e.g. a book, a
+paper, an essay, a poem, a score, a song, a script, a film, a TV show, a game,
+a sculpture, a painting, a theatre production, a play, an opera, a musical, an
+exhibition, a legal case report, a computer program, etc). This can be a work
+that is being quoted or referenced in detail (i.e. a citation), or it can just
+be a work that is mentioned in passing.</p>
+<p><cite>Universal Declaration of Human Rights</cite>, United Nations, December
+1948. Adopted by General Assembly resolution 217 A (III).</p>
+<h3 id="inline-quotes" tabindex="-1"><a href="#inline-quotes"><span>Inline quotes</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-q-element"><code>q</code></a> element represents content quoted inline from another source. For
+example:</p>
+<p>The man said <q>Things that are impossible just take longer</q>. I disagreed
+with him.</p>
+<h3 id="definition" tabindex="-1"><a href="#definition"><span>Definition</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-dfn-element"><code>dfn</code></a> element represents the defining instance of a term. For
+example:</p>
+<p>The <dfn><abbr title="Garage Door Opener">GDO</abbr></dfn> is a device that
+allows off-world teams to open the iris.</p>
+<p>[…]</p>
+<p>Teal’c activated his <a href=#gdo><abbr title="Garage Door Opener">GDO</abbr></a>
+and so Hammond ordered the iris to be opened.</p>
+<h3 id="abbreviation" tabindex="-1"><a href="#abbreviation"><span>Abbreviation</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-abbr-element"><code>abbr</code></a> element represents an abbreviation or acronym, optionally
+with it’s expansion. For example:</p>
+<p>The <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>
+started working on HTML5 in 2004.</p>
+<h3 id="ruby-annotations" tabindex="-1"><a href="#ruby-annotations"><span>Ruby annotations</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-ruby-element"><code>ruby</code></a> element allows one or more spans of text to be marked with
+ruby annotations — short runs of text presented alongside base text, primarily
+used in East Asian typography as a guide for pronunciation or to include other
+annotations. For example:</p>
+<p><ruby lang="ja">編集者 <rp>(</rp><rt lang="en">editor</rt><rp>)</rp></ruby></p>
+<p>The <a href="https://html.spec.whatwg.org/#the-rt-element"><code>rt</code></a> element marks the ruby text component of a ruby annotation.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-rp-element"><code>rp</code></a> element can be used to provide parentheses around a ruby text
+component of a ruby annotation, used by user agents that don’t support ruby
+annotations.</p>
+<h3 id="data" tabindex="-1"><a href="#data"><span>Data</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-data-element"><code>data</code></a> element represents it’s contents, along with a
+machine-readable form of the content. For example:</p>
+<p><data value="8">Eight</data></p>
+<h3 id="time" tabindex="-1"><a href="#time"><span>Time</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-time-element"><code>time</code></a> element represents it’s contents, along with a
+machine-readable form of the content. The kind of content is limited to various
+kinds of dates, times, time-zone offsets, and durations. For example:</p>
+<p>Today is <time datetime="2011-11-18">Friday</time>.</p>
+<h3 id="code" tabindex="-1"><a href="#code"><span>Code</span></a></h3>
+<p>The code element represents a fragment of computer code. For example:</p>
+<p>When you call the <code>activate()</code> method on the <code>robotSnowman</code> object, the eyes
+glow.</p>
+<h3 id="variables" tabindex="-1"><a href="#variables"><span>Variables</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-var-element"><code>var</code></a> element represents a variable. This could be an actual
+variable in a mathematical expression or programming context, an identifier
+representing a constant, a symbol identifying a physical quantity, a function
+parameter, or just be a term used as a placeholder in prose.</p>
+<p>In the paragraph below, the letter “n” is being used as a variable in prose:</p>
+<p>If there are <var>n</var> pipes leading to the ice cream factory then I expect
+at <em>least</em> <var>n</var> flavors of ice cream to be available for purchase!</p>
+<h3 id="sample-output" tabindex="-1"><a href="#sample-output"><span>Sample output</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-samp-element"><code>samp</code></a> element represents sample or quoted output from another
+program or computing system.</p>
+<p>This example shows the samp element being used inline:</p>
+<p>The computer said <samp>Too much cheese in tray two</samp> but I didn’t know
+what that meant.</p>
+<h3 id="keyboard-entry" tabindex="-1"><a href="#keyboard-entry"><span>Keyboard entry</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-kbd-element"><code>kbd</code></a> element represents user input (typically keyboard input,
+although it may also be used to represent other input, such as voice commands).</p>
+<p>Here the kbd element is used to indicate keys to press:</p>
+<p>To make George eat an apple, press <kbd><kbd>Shift</kbd>+<kbd>F3</kbd></kbd>.</p>
+<h3 id="subscripts-and-superscripts" tabindex="-1"><a href="#subscripts-and-superscripts"><span>Subscripts and superscripts</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-sub-element"><code>sub</code></a> element represents a subscript and the <a href="https://html.spec.whatwg.org/#the-sup-element"><code>sup</code></a> element
+represents a superscript.</p>
+<p>f(<var>x</var>, <var>n</var>) = log<sub>4</sub><var>x</var><sup><var>n</var></sup></p>
+<h3 id="alternative-voice" tabindex="-1"><a href="#alternative-voice"><span>Alternative voice</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-i-element"><code>i</code></a> element represents a span of text in an alternate voice or mood,
+or otherwise offset from the normal prose in a manner indicating a different
+quality of text, such as a taxonomic designation, a technical term, an
+idiomatic phrase from another language, transliteration, a thought, or a ship
+name in Western texts.</p>
+<p>In the following example, a dream sequence is marked up using <code>i</code> elements.</p>
+<blockquote>
+<p>Raymond tried to sleep.</p>
+<p><i>The ship sailed away on Thursday</i>, he dreamt. <i>The ship had many
+people aboard, including a beautiful princess called Carey. He watched her,
+day-in, day-out, hoping she would notice him, but she never did.</i></p>
+<p><i>Finally one night he picked up the courage to speak with her—</i></p>
+<p>Raymond woke with a start as the fire alarm rang out.</p>
+</blockquote>
+<h3 id="emboldened" tabindex="-1"><a href="#emboldened"><span>Emboldened</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-b-element"><code>b</code></a> element represents a span of text to which attention is being
+drawn for utilitarian purposes without conveying any extra importance and with
+no implication of an alternate voice or mood, such as key words in a document
+abstract, product names in a review, actionable words in interactive
+text-driven software, or an article lede.</p>
+<p>The following example shows a use of the <code>b</code> element to highlight key words
+without marking them up as important:</p>
+<p>The <b>frobonitor</b> and <b>barbinator</b> components are fried.</p>
+<h3 id="unarticulated-annotated-text" tabindex="-1"><a href="#unarticulated-annotated-text"><span>Unarticulated annotated text</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-u-element"><code>u</code></a> element represents a span of text with an unarticulated, though
+explicitly rendered, non-textual annotation, such as labeling the text as
+being a proper name in Chinese text (a Chinese proper name mark), or labeling
+the text as being misspelt. For example:</p>
+<p>The <u>see</u> is full of fish.</p>
+<h3 id="marked-or-highlighted-text" tabindex="-1"><a href="#marked-or-highlighted-text"><span>Marked or highlighted text</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-mark-element"><code>mark</code></a> element represents a run of text in one document marked or
+highlighted for reference purposes, due to its relevance in another context.
+For example:</p>
+<p>I also have some <mark>kitten</mark>s who are visiting me these days. They’re
+really cute. I think they like my garden! Maybe I should adopt a
+<mark>kitten</mark>.</p>
+<h3 id="bidirectional-text" tabindex="-1"><a href="#bidirectional-text"><span>Bidirectional text</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-bdi-element"><code>bdi</code></a> element represents a span of text that is to be isolated from
+it’s surroundings for the purposes of bidirectional text formatting. For
+example:</p>
+<p>The recommended restaurant is <bdi lang="">My Juice Café (At The Beach)</bdi>.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-bdo-element"><code>bdo</code></a> element represents explicit text directionality formatting
+control for its children. It allows authors to override the Unicode
+bidirectional algorithm by explicitly specifying a direction override. For
+example:</p>
+<p>The proposal is to write English, but in reverse order. “Juice” would become
+“<bdo dir=rtl>Juice</bdo>”&gt;</p>
+<h3 id="content-spans" tabindex="-1"><a href="#content-spans"><span>Content spans</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-span-element"><code>span</code></a> element is a generic inline container for a group of
+text-level elements. It has no special meaning of it’s own.</p>
+<p>It’s typically used to wrap a group of elements for styling purposes.</p>
+<!-- No example yet -->
+<p>Like the <code>div</code> element, it should be viewed as an element of last resort, for
+when no other element is suitable</p>
+<h3 id="line-breaks" tabindex="-1"><a href="#line-breaks"><span>Line breaks</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-br-element"><code>br</code></a> element represents a line break. For example:</p>
+<p>P. Sherman<br>
+42 Wallaby Way<br>
+Sydney</p>
+<h3 id="line-break-opportunity" tabindex="-1"><a href="#line-break-opportunity"><span>Line break opportunity</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-wbr-element"><code>wbr</code></a> element represents a line break opportunity.</p>
+<p>In the following example, someone is quoted as saying something which, for
+effect, is written as one long word. However, to ensure that the text can be
+wrapped in a readable fashion, the individual words in the quote are separated
+using a <code>wbr</code> element.</p>
+<p>So then she pointed at the tiger and screamed
+"there<wbr>is<wbr>no<wbr>way<wbr>you<wbr>are<wbr>ever<wbr>going<wbr>to<wbr>catch<wbr>me"!</p>
+<h2 id="edits" tabindex="-1"><a href="#edits"><span>Edits</span></a></h2>
+<h3 id="additions" tabindex="-1"><a href="#additions"><span>Additions</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-ins-element"><code>ins</code></a> element represents an addition to the page. For example:</p>
+<ins datetime="2005-03-16 00:00Z">
+    <p>I like fruit.</p>
+</ins>
+<h3 id="deletions" tabindex="-1"><a href="#deletions"><span>Deletions</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-del-element"><code>del</code></a> element represents a removal from the page. For example:</p>
+<ul>
+    <li>Empty the dishwasher</li>
+    <li><del datetime="2009-10-11T01:25-07:00">Watch Walter Lewin's lectures</del></li>
+    <li><del datetime="2009-10-10T23:38-07:00">Download more tracks</del></li>
+    <li>Buy a printer</li>
+</ul>
+<h2 id="embedded-content" tabindex="-1"><a href="#embedded-content"><span>Embedded content</span></a></h2>
+<h3 id="pictures" tabindex="-1"><a href="#pictures"><span>Pictures</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-picture-element"><code>picture</code></a> element is a container for an <code>img</code> element (see
+below) that can provide alternative sources for an image.</p>
+<p>For example, the format of the following image will depend on what image
+formats your web browser supports. Newer browsers that support the
+<a href="https://en.wikipedia.org/wiki/WebP">WebP</a> format will use this, and older
+browsers that don’t support WebP will fallback to a (less efficient but widely
+supported) <a href="https://en.wikipedia.org/wiki/JPEG">JPEG</a> image.</p>
+<picture>
+    <source srcset="/sample-files/sample.webp" type="image/webp">
+    <img src="/sample-files/sample.jpg" width="133" height="106"
+        alt="A blue rectangle">
+</picture>
+<h3 id="media-sources" tabindex="-1"><a href="#media-sources"><span>Media sources</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-source-element"><code>source</code></a> element describes one of multiple alternative sources
+for <code>audio</code>, <code>img</code>, and <code>video</code> elements.</p>
+<p>See the examples for the <a href="#pictures"><code>picture</code></a> (above), <a href="#images"><code>img</code></a>,
+<a href="#embedded-video"><code>video</code></a>, and <a href="#embedded-audio"><code>audio</code></a> elements (below)
+for usage of the <code>source</code> element.</p>
+<h3 id="images" tabindex="-1"><a href="#images"><span>Images</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-img-element"><code>img</code></a> element represents an image.</p>
+<p><img src="/sample-files/sample.jpg" width="133" height="106"
+    alt="A blue rectangle."></p>
+<h3 id="inline-frames" tabindex="-1"><a href="#inline-frames"><span>Inline frames</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-iframe-element"><code>iframe</code></a> element can be used to embed HTML or another HTML page
+into the current page.</p>
+<iframe sandbox loading="lazy"
+    srcdoc="<title>An empty page</title>"
+    src="javascript:void(0)"
+    title="An example iframe, embedding an empty page"></iframe> 
+<p><strong>Note</strong>: In the example above, you should only see a blank page and your web
+browser’s default styles for an <code>iframe</code>.</p>
+<h3 id="embedded-external-content" tabindex="-1"><a href="#embedded-external-content"><span>Embedded external content</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-embed-element"><code>embed</code></a> element embeds external content into the current page. The
+content is provided by an external application or a browser plug-in.</p>
+<figure id="embed-example">
+    <embed aria-labelledby="embed-example-label" 
+        src="/sample-files/sample.pdf"
+        type="application/pdf"
+        title="sample.pdf (PDF)">
+    <figcaption id="embed-example-label">
+        An example of the <code>embed</code> element, embedding a PDF
+        document.
+    </figcaption>
+</figure>
+<p>For web browsers that support the <code>embed</code> element, you should see a PDF file
+embedded in the current page.</p>
+<h3 id="external-objects" tabindex="-1"><a href="#external-objects"><span>External objects</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-object-element"><code>object</code></a> element embeds an external resource, such as an image, a
+nested page, or a resource to be handled by a plugin, into the current page.</p>
+<figure id="object-example">
+    <object aria-labelledby="object-example-label"
+        data="/sample-files/sample.pdf" type="application/pdf">
+        <p>
+            Your web browser doesn't support displaying this file. You can
+            download this file instead:
+            <a download href="/sample-files/sample.pdf">sample.pdf (PDF)</a>.
+        </p>
+    </object>
+    <figcaption id="object-example-label">
+        An example of the <code>object</code> element, embedding a PDF
+        document.
+    </figcaption>
+</figure>
+<p>For web browsers that don’t support the <code>object</code> element, or don’t support
+embedding PDFs, you should see a link to the PDF document instead.</p>
+<p><strong>Note</strong>: The descriptions of <code>embed</code> and <code>object</code> are very similar, so it’s
+often not clear which to use. There are some minor differences in what
+attributes each supports, but the most significant difference is that the
+<code>object</code> element supports including fallback content as child elements,
+whereas the <code>embed</code> element does not. Generally, it’s preferable to avoid both
+elements,
+<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Other_embedding_technologies#the_embed_and_object_elements">MDN notes that</a>:</p>
+<blockquote>
+<p>PDFs tend to be better linked to than embedded, and other content such as
+images and video have much better, easier elements to handle those.</p>
+</blockquote>
+<h3 id="embedded-video" tabindex="-1"><a href="#embedded-video"><span>Embedded video</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-video-element"><code>video</code></a> element embeds a media player which supports video
+playback into the current page.</p>
+<p>For web browsers that support the <code>video</code> element, you should see a video,
+with subtitles, embedded in the current page. For web browsers that don’t
+support the <code>video</code> element, or don’t support playing that type of video, you
+should see a link to download the video instead.</p>
+<script>
+    // An attempt at showing fallback content if the audio or video element is
+    // supported, but the formats of the sources specified are not.
+    // See https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element
+    function fallback(media) {
+        while (media.hasChildNodes()) {
+            if (media.firstChild instanceof HTMLSourceElement) {
+                media.removeChild(media.firstChild);
+            } else {
+                media.parentNode.insertBefore(media.firstChild, media);
+            }
+        }
+
+        media.parentNode.removeChild(media);
+    }
+</script>
+<figure>
+    <video controls width="320" height="180" id="video-example" aria-labelledby="video-example-label">
+        <source src="/sample-files/sample.mp4" type="video/mp4" onerror="fallback(parentNode)">
+        <track default kind="captions" srclang="en" src="/sample-files/test.vtt">
+        <p>
+            Your web browser doesn't support playing this video. You can
+            download this video, 
+            <a download href="/sample-files/sample.mp4">sample.mp4 (MP4)</a>,
+            and subtitles,
+            <a download href="/sample-files/sample.vtt">sample.vtt (WebVTT)</a>,
+            instead.
+        </p>
+    </video>
+    <figcaption id="video-example-label">
+        An example of the <code>video</code> element, with captions provided
+        by the <code>track</code> element. A plain white screen is shown, with
+        a single subtitle, <q>This is a test subtitle</q>.
+    </figcaption>
+</figure>
+<p><strong>Note</strong>: The video controls provided by web browsers aren’t
+always accessible.</p>
+<h3 id="embedded-audio" tabindex="-1"><a href="#embedded-audio"><span>Embedded audio</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-audio-element"><code>audio</code></a> element embeds a media player which supports sound
+playback into the current page.</p>
+<p>For web browsers that support the <code>audio</code> element, you should see an audio
+player embedded in the current page. For web browsers that don’t support the
+<code>audio</code> element, or don’t support playing that type of audio, you should see
+a link to download the audio instead.</p>
+<figure>
+    <audio controls id="audio-example" aria-labelledby="audio-example-label">
+        <source src="/sample-files/sample.mp3" type="audio/mp3" onerror="fallback(parentNode)">
+        <p>
+            Your web browser doesn't support playing this audio. You can
+            download this audio instead:
+            <a download href="/sample-files/sample.mp3">sample.mp3 (MP3)</a>.
+        </p>
+    </audio>
+    <figcaption id="audio-example-label">
+        An example of the <code>audio</code> element. A 440Hz sine wave
+        signal, often used to test audio equipment, is played.
+    </figcaption>
+</figure>
+<p><strong>Note</strong>: The audio controls provided by web browsers aren’t
+always accessible.</p>
+<h3 id="embedded-text-tracks" tabindex="-1"><a href="#embedded-text-tracks"><span>Embedded text tracks</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-track-element"><code>track</code></a> element associates subtitles and other <em>timed text tracks</em>
+or time-based data with <code>audio</code> and <code>video</code> elements. Text track are formatted
+in <abbr title="Web Video Text Tracks">WebVTT</abbr> format.</p>
+<p>See the example for the <a href="#embedded-video"><code>video</code></a> element, above, for usage
+of the <code>track</code> element.</p>
+<h3 id="image-maps" tabindex="-1"><a href="#image-maps"><span>Image maps</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-map-element"><code>map</code></a> element represents an <em>image map</em>, which allows areas on an
+image, represented by an <code>img</code> element, to be associated with hyperlinks.
+Strangely, it doesn’t represent a map.</p>
+<p>The <a href="https://html.spec.whatwg.org/#the-area-element"><code>area</code></a> element represents either a hyperlink with some text and a
+corresponding area on an image map, or a dead area on an image map:</p>
+<ul>
+<li>
+<p>If the <code>area</code> element has an <code>href</code> attribute, then the area element
+represents a hyperlink. The <code>alt</code> attribute is the text of the hyperlink.</p>
+</li>
+<li>
+<p>If an <code>area</code> element has no <code>href</code> attribute, then the area represented by
+the element cannot be selected. The alt attribute must be omitted in this
+case.</p>
+</li>
+</ul>
+<p>For example, in the following image, each of the shapes links to a different
+URL. You should see the URL change in your web browser’s address bar when you
+click on a shape.</p>
+<p>
+    Please select a shape:
+</p>
+<img src="/sample-files/sample-imagemap.png" usemap="#shapes"
+    width="600" height="150"
+    alt="Four shapes are available: a red hollow box, a green circle, a blue triangle, and a yellow four-pointed star.">
+<map name="shapes">
+    <area shape="rect" coords="50,50,100,100"> <!-- the hole in the red box -->
+    <area shape="rect" coords="25,25,125,125" href="#red" alt="Red box.">
+    <area shape="circle" coords="200,75,50" href="#green" alt="Green circle.">
+    <area shape="poly" coords="325,25,262,125,388,125" href="#blue" alt="Blue triangle.">
+    <area shape="poly" coords="450,25,435,60,400,75,435,90,450,125,465,90,500,75,465,60" href="#yellow" alt="Yellow star.">
+</map>
+<h3 id="mathematical-markup" tabindex="-1"><a href="#mathematical-markup"><span>Mathematical markup</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-math-element"><code>math</code></a> element represents mathematical notations, as defined by
+<a href="https://www.w3.org/TR/MathML/">MathML</a>.</p>
+<p>
+    For example, here is the
+    <a href="https://en.wikipedia.org/wiki/Quadratic_equation">quadratic equation</a>
+    expressed in MathML:
+    <math>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+          <mo form="prefix">−</mo> <mi>b</mi>
+          <mo>±</mo>
+          <msqrt>
+              <msup> <mi>b</mi> <mn>2</mn> </msup>
+              <mo>−</mo>
+              <mn>4</mn> <mo>⁢</mo> <mi>a</mi> <mo>⁢</mo> <mi>c</mi>
+          </msqrt>
+          </mrow>
+          <mrow>
+          <mn>2</mn> <mo>⁢</mo> <mi>a</mi>
+          </mrow>
+        </mfrac>
+    </math>
+</p>
+<p><strong>Note</strong>: You’ll want to provide an accessible
+<a href="https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#fallback_for_browsers_without_mathml_support">fallback for browsers without MathML support</a>.</p>
+<h3 id="scalable-vector-graphics" tabindex="-1"><a href="#scalable-vector-graphics"><span>Scalable vector graphics</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-svg-element"><code>svg</code></a> element embeds an <abbr title="Scalable vector graphics">SVG</abbr>
+image into the page. SVG is an XML-based two-dimensional vector graphics
+markup language.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133 106" width="133" height="106">
+    <title>An example SVG, a blue rectangle.</title>
+    <rect fill="#3300f5" width="133" height="106" />
+</svg>
+<h2 id="tabular-data" tabindex="-1"><a href="#tabular-data"><span>Tabular data</span></a></h2>
+<p>The <a href="https://html.spec.whatwg.org/#the-table-element"><code>table</code></a> element represents tabular data. Tables have rows,
+columns, and cells containing data.</p>
+<p>This example uses the <code>table</code>, <code>tbody</code>, <code>thead</code>, <code>tfoot</code>, <code>tr</code>, <code>td</code>, and
+<code>th</code> elements to markup a table of purchases. The <code>caption</code> element is used to
+provide an accessible description of the table, and the <code>colgroup</code> and <code>col</code>
+elements are used to style the final column.</p>
+<table>
+    <caption>How I chose to spend my money</caption>
+        <colgroup>
+        <col span="4">
+        <col style="background: Mark; color: MarkText;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th scope="col">Purchase</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Evaluation</th>
+            <th scope="col">Cost (€)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Haircut</td>
+            <td>Hairdresser</td>
+            <td><time datetime="2023-09-12">12 Sept.</time></td>
+            <td>Great idea</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Lasagna</td>
+            <td>Restaurant</td>
+            <td><time datetime="2023-09-12">12 Sept.</time></td>
+            <td>Regrets</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>Shoes</td>
+            <td>Shoeshop</td>
+            <td><time datetime="2023-09-13">13 Sept.</time></td>
+            <td>Big regrets</td>
+            <td>65</td>
+        </tr>
+        <tr>
+            <td>Toothpaste</td>
+            <td>Supermarket</td>
+            <td><time datetime="2023-09-13">13 Sept.</time></td>
+            <td>Good</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th scope="row" colspan="4">Total</th>
+            <td>118</td>
+        </tr>
+    </tfoot>
+</table>
+<h2 id="forms" tabindex="-1"><a href="#forms"><span>Forms</span></a></h2>
+<h3 id="interactive-forms" tabindex="-1"><a href="#interactive-forms"><span>Interactive forms</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-form-element"><code>form</code></a> element represents a collection of interactive controls,
+such as text, buttons, checkboxes, range, or colour picker controls, for
+submitting information.</p>
+<p>For example, here is a form that asks a user to enter a single value.</p>
+<form id="example-form">
+    <p>
+        <label>
+            Your answer:<br>
+            <input name="answer" value="42">
+        </label>
+    </p>
+    <button>Guess</button>
+</form>
+<h3 id="form-field-label" tabindex="-1"><a href="#form-field-label"><span>Form field label</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-label-element"><code>label</code></a> element represents a caption for an item in a user
+interface. It’s typically used for labelling form controls.</p>
+<p>See the <a href="#example-form">form example</a>, above, for usage of the <code>label</code>
+element.</p>
+<h3 id="form-control" tabindex="-1"><a href="#form-control"><span>Form control</span></a></h3>
+<p>The following form includes examples of the <code>input</code> element, including it’s
+various input types.</p>
+<form method="get">
+    <div>
+        <label>Hidden</label>
+        <p id="input-type-hidden-description">
+            A control that is not displayed but whose value is submitted to the
+            server with the rest of the form. There is an example here, but
+            it is hidden!
+        </p>
+        <input type="hidden" name="hidden" id="input-type-hidden-example">
+    </div>
+    <div>
+        <label for="input-type-text-example">Text</label>
+        <p id="input-type-text-description">
+            The default input type: a single-line text field.
+        </p>
+        <input type="text" name="text" id="input-type-text-example"
+            aria-describedby="input-type-text-description">
+    </div>
+    <div>
+        <label for="input-type-search-example">Search</label>
+        <p id="input-type-search-description">
+            A single-line text field for entering search strings.
+        </p>
+        <input type="search" name="search" id="input-type-search-example"
+            aria-describedby="input-type-search-description">
+    </div>
+    <div>
+        <label for="input-type-tel-example">Telephone</label>
+        <p id="input-type-tel-description">
+            A control for entering a telephone number.
+        </p>
+        <input type="tel" name="tel" id="input-type-tel-example"
+            aria-describedby="input-type-tel-description">
+    </div>
+    <div>
+        <label for="input-type-url-example">URL</label>
+        <p id="input-type-url-description">
+            A field for entering a URL.
+        </p>
+        <input type="url" name="url" id="input-type-url-example"
+            aria-describedby="input-type-url-description">
+    </div>
+    <div>
+        <label for="input-type-email-example">Email</label>
+        <p id="input-type-email-description">
+            A field for entering an email address.
+        </p>
+        <input type="email" name="email" id="input-type-email-example"
+            aria-describedby="input-type-email-description">
+    </div>
+    <div>
+        <label for="input-type-password-example">Password</label>
+        <p id="input-type-password-description">
+            A single-line text field whose value is obscured.
+        </p>
+        <input type="password" name="password" id="input-type-password-example"
+            aria-describedby="input-type-password-description">
+    </div>
+    <div>
+        <label for="input-type-date-example">Date</label>
+        <p id="input-type-date-description">
+            A control for entering a date (year, month, and day, with no time).
+        </p>
+        <input type="date" name="date" id="input-type-date-example"
+            aria-describedby="input-type-date-description">
+    </div>
+    <div>
+        <label for="input-type-month-example">Month</label>
+        <p id="input-type-month-description">
+            A control for entering a month and year, with no time zone.
+        </p>
+        <input type="month" name="month" id="input-type-month-example"
+            aria-describedby="input-type-month-description">
+    </div>
+    <div>
+    <label for="input-type-week-example">Week</label>
+        <p id="input-type-week-description">
+            A control for entering a date consisting of a week-year number and
+            a week number with no time zone.
+        </p>
+        <input type="week" name="week" id="input-type-week-example"
+            aria-describedby="input-type-week-description">
+    </div>
+    <div>
+        <label for="input-type-time-example">Time</label>
+        <p id="input-type-time-description">
+            A control for entering a time value with no time zone.
+        </p>
+        <input type="time" name="time" id="input-type-time-example"
+            aria-describedby="input-type-time-description">
+    </div>
+    <div>
+        <label for="input-type-datetime-local-example">Local datetime</label>
+        <p id="input-type-datetime-local-description">
+            A control for entering a date and time, with no time zone.
+        </p>
+        <input type="datetime-local" name="datetime-local" id="input-type-datetime-local-example"
+            aria-describedby="input-type-datetime-local-description">
+    </div>
+    <div>
+        <label for="input-type-number-example">Number</label>
+        <p id="input-type-number-description">
+            A control for entering a number.
+        </p>
+        <input type="number" name="number" id="input-type-number-example"
+            aria-describedby="input-type-number-description">
+    </div>
+    <div>
+        <label for="input-type-range-example">Range</label>
+        <p id="input-type-range-description">
+            A control for entering a number whose exact value is not important.
+        </p>
+        <input type="range" name="range" id="input-type-range-example"
+            aria-describedby="input-type-range-description">
+    </div>
+    <div>
+        <label for="input-type-color-example">Colour</label>
+        <p id="input-type-color-description">
+            A control for specifying a colour.
+        </p>
+        <input type="color" name="color" id="input-type-color-example"
+            aria-describedby="input-type-color-description">
+    </div>
+    <div>
+        <label for="input-type-checkbox-example">Checkbox</label>
+        <p id="input-type-checkbox-description">
+            A check box allowing single values to be selected and deselected.
+        </p>
+        <input type="checkbox" name="checkbox" id="input-type-checkbox-example"
+            aria-describedby="input-type-checkbox-description">
+    </div>
+    <div>
+        <label for="input-type-radio-example">Radio</label>
+        <p id="input-type-radio-description">
+            A radio button, allowing a single value to be selected out of
+            multiple choices.
+        </p>
+        <input type="radio" name="radio" id="input-type-radio-example"
+            aria-describedby="input-type-radio-description">
+    </div>
+    <div>
+        <label for="input-type-file-example">File</label>
+        <p id="input-type-file-description">
+            A control for selecting a file. 
+        </p>
+        <input type="file" name="file" id="input-type-file-example"
+            aria-describedby="input-type-file-description">
+    </div>
+    <div>
+        <label for="input-type-submit-example">Submit</label>
+        <p id="input-type-submit-description">
+            A button that submits the form.
+        </p>
+        <input type="submit" name="submit" id="input-type-submit-example"
+            aria-describedby="input-type-submit-description">
+    </div>
+    <div>
+        <label for="input-type-image-example">Image</label>
+        <p id="input-type-image-description">
+            A graphical submit button.
+        </p>
+        <input type="image" alt="Submit form." name="image"
+            id="input-type-image-example"
+            aria-describedby="input-type-image-description">
+    </div>
+    <div>
+        <label for="input-type-reset-example">Reset</label>
+        <p id="input-type-reset-description">
+            A button that resets the contents of the form to default values.
+        </p>
+        <input type="reset" name="reset" id="input-type-reset-example"
+            aria-describedby="input-type-reset-description">
+    </div>
+    <div>
+        <label for="input-type-button-example">Button</label>
+        <p id="input-type-button-description">
+            A push button with no default behaviour.
+        </p>
+        <input type="button" name="button" value="Button"
+            id="input-type-button-example"
+            aria-describedby="input-type-button-description">
+    </div>
+</form>
+<h3 id="buttons" tabindex="-1"><a href="#buttons"><span>Buttons</span></a></h3>
+<p>The following form includes examples of the <code>button</code> element, including it’s
+various input types.</p>
+<p><strong>Note</strong>: This form doesn’t actually do anything.</p>
+<form action="javascript:void(0)">
+    <div>
+        <label for="button-type-submit-example">Submit</label>
+        <p id="button-type-submit-description">
+            A button that submits the form.
+        </p>
+        <button type="submit" name="submit"
+            id="button-type-submit-example"
+            aria-describedby="button-type-submit-description">
+            Submit
+        </button>
+    </div>
+    <div>
+        <label for="button-type-reset-example">Reset</label>
+        <p id="button-type-reset-description">
+            A button that resets the contents of the form to default values.
+        </p>
+        <button type="reset" name="reset"
+            id="button-type-reset-example"
+            aria-describedby="button-type-reset-description">
+            Reset
+        </button>
+    </div>
+    <div>
+        <label for="button-type-button-example">Button</label>
+        <p id="button-type-button-description">
+            A push button with no default behaviour.
+        </p>
+        <button type="button" name="button"
+            id="button-type-button-example"
+            aria-describedby="button-type-button-description">
+            Button
+        </button>
+    </div>
+</form>
+<h3 id="select-list" tabindex="-1"><a href="#select-list"><span>Select list</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-select-element"><code>select</code></a> element represents a control for selecting amongst a set
+of options.</p>
+<p><label for="select-example">Select unit type:</label>
+<select id="select-example" name="select">
+<option value="1">Miner</option>
+<option value="2">Puffer</option>
+<option value="3" selected>Snipey</option>
+<option value="4">Max</option>
+<option value="5">Firebot</option>
+</select></p>
+<h3 id="data-list" tabindex="-1"><a href="#data-list"><span>Data list</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-datalist-element"><code>datalist</code></a> element represents a set of option elements that
+represent predefined options for other controls.</p>
+<p><label for="datalist-example">Course</label>
+<input id="datalist-example" type="url" name="url" list="urls">
+<datalist id="urls">
+<option label="MIME: Format of Internet Message Bodies" value="https://www.rfc-editor.org/rfc/rfc2045">
+<option label="HTML" value="https://html.spec.whatwg.org/">
+<option label="DOM" value="https://dom.spec.whatwg.org/">
+<option label="Fullscreen" value="https://fullscreen.spec.whatwg.org/">
+<option label="Media Session" value="https://mediasession.spec.whatwg.org/">
+<option label="The Single UNIX Specification, Version 3" value="http://www.unix.org/version3/">
+</datalist></p>
+<h3 id="option-group" tabindex="-1"><a href="#option-group"><span>Option group</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-optgroup-element"><code>optgroup</code></a> element represents a group of <code>option</code> elements with
+a common label.</p>
+<p><strong>Note</strong>: This form doesn’t actually do anything.</p>
+<form action="javascript:void(0)">
+    <label for="option-group-example">Course</label>
+    <p id="option-group-description">
+        Which course would you like to watch today?
+    </p>
+    <select id="option-group-example" name="course"
+        aria-describedby="option-group-description">
+        <optgroup label="8.01 Physics I: Classical Mechanics">
+            <option value="8.01.1" label="Lecture 01: Powers of Ten">
+            <option value="8.01.2" label="Lecture 02: 1D Kinematics">
+            <option value="8.01.3" label="Lecture 03: Vectors">
+        </optgroup>
+        <optgroup label="8.02 Electricity and Magnetism">
+            <option label="Lecture 01: What holds our world together?" value="8.02.1">
+            <option label="Lecture 02: Electric Field" value="8.02.2">
+            <option label="Lecture 03: Electric Flux" value="8.02.3">
+        </optgroup>
+        <optgroup label="8.03 Physics III: Vibrations and Waves">
+            <option label="Lecture 01: Periodic Phenomenon" value="8.03.1">
+            <option label="Lecture 02: Beats" value="8.03.2">
+            <option label="Lecture 03: Forced Oscillations with Damping" value="8.03.3">
+        </optgroup>
+    </select>
+    <p><input type=submit value="Play"></p>
+</form>
+<h3 id="option" tabindex="-1"><a href="#option"><span>Option</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-option-element"><code>option</code></a> element represents an option in a <code>select</code> element or as
+part of a list of suggestions in a <code>datalist</code> element. See examples of these,
+above, for usage of the <code>option</code> element.</p>
+<h3 id="multi-line-text" tabindex="-1"><a href="#multi-line-text"><span>Multi-line text</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-textarea-element"><code>textarea</code></a> element represents a multiline plain text edit
+control.</p>
+<p><label for="textarea-example">If you have any comments, please let us know: </label><br></p>
+<textarea id="textarea-example" name="comments"></textarea>
+<h3 id="output" tabindex="-1"><a href="#output"><span>Output</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-output-element"><code>output</code></a> element represents the result of a calculation, or the
+result of a user action.</p>
+<p>In this example, the <code>output</code> element is used to display the result for a
+simple calculator:</p>
+<form oninput="result.value = parseInt(a.value, 10) + parseInt(b.value, 10)">
+    <p>
+        <label for="a">Number 1</label>:
+        <input type="number" id="a" name="a" value="19"> +
+    </p>
+    <p>
+        <label for="b">Number 2</label>:
+        <input type="number" id="b" name="b" value="23"> =
+    </p>
+    <p>
+        <label for="result">Result</label>:
+        <output id="result" name="result" for="a b">42</output>
+    </p>
+</form>
+<p><strong>Note</strong>: This interactive example requires JavaScript.</p>
+<h3 id="progress" tabindex="-1"><a href="#progress"><span>Progress</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-progress-element"><code>progress</code></a> element represents the completion progress of a
+task. Progress is either <em>determinate</em> or <em>indeterminate</em>.</p>
+<p>A determinate progress bar indicates the fraction of work that has so far been
+completed. For example:</p>
+<label>
+    Progress:
+    <progress value="50" max="100">50%</progress>
+</label>
+<p>An indeterminate indicates that progress is being made but that it is not
+clear how much more work remains to be done before the task is complete. For
+example:</p>
+<div aria-busy="true" aria-describedby="progress-bar"></div>
+<progress id="progress-bar" aria-label="Example loading state…"></progress>
+<h3 id="scalar-measures" tabindex="-1"><a href="#scalar-measures"><span>Scalar measures</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-meter-element"><code>meter</code></a> element represents a scalar measurement within a known
+range, or a fractional value.</p>
+<p>In this example, the <code>meter</code> element is used to describe the amount of disk
+space used, out of a known amount of total space available.</p>
+<label>
+    Disk usage:
+    <meter min="0" value="170261928" max="233257824">
+        170,261,928 bytes used out of 233,257,824 bytes available
+    </meter>
+</label>
+<h3 id="form-control-groups" tabindex="-1"><a href="#form-control-groups"><span>Form control groups</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-fieldset-element"><code>fieldset</code></a> element represents a set of form controls grouped
+together, optionally with a caption, represented by the <code>legend</code> element.</p>
+<fieldset>
+    <legend>Display</legend>
+    <p>
+        <label>
+            <input type="radio" name="colour" value="0" checked>
+            Black on White
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="radio" name="colour" value="1">
+            White on Black
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="checkbox" name="grayscale">
+            Use grayscale
+        </label>
+    </p>
+    <p>
+        <label>
+            Enhance contrast
+            <input type="range" name="enhance" list="contrast" min="0" max="100" value="0" step="1">
+        </label>
+        <datalist id="contrast">
+            <option label="Normal" value="0">
+            <option label="Maximum" value="100">
+        </datalist>
+    </p>
+</fieldset>
+<h2 id="interactive-elements" tabindex="-1"><a href="#interactive-elements"><span>Interactive elements</span></a></h2>
+<h3 id="details-disclosure" tabindex="-1"><a href="#details-disclosure"><span>Details disclosure</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-details-element"><code>details</code></a> element represents a <a href="https://adrianroselli.com/2020/05/disclosure-widgets.html">disclosure widget</a>
+from which the user can obtain additional information or controls.</p>
+<p>For example, clicking “Details”, below, will reveal additional information.</p>
+<details>
+    <dl>
+        <dt>Transfer rate:</dt>
+        <dd>452KB/s</dd>
+        <dt>Local filename:<dt>
+        <dd>/home/rpausch/raycd.m4v</dd>
+        <dt>Remote filename:<dt>
+        <dd>/var/www/lectures/raycd.m4v</dd>
+        <dt>Duration:</dt>
+        <dd>0:16:27</dd>
+        <dt>Color profile:</dt>
+        <dd>SD (6-1-6)</dd>
+        <dt>Dimensions:</dt>
+        <dd>320×240</dd>
+    </dl>
+</details>
+<hr />
+<p>The <a href="https://html.spec.whatwg.org/#the-summary-element"><code>summary</code></a> element represents a summary, caption, or legend for
+the rest of the contents of the <code>summary</code> element’s parent <code>details</code> element,
+if any.</p>
+<p>Without a <code>summary</code> element, a <code>details</code> element will be given a default
+summary (see the example above). This is often just the text “Details” in many
+browsers. The <code>summary</code> element can be used to provide a more useful synopsis:</p>
+<details>
+    <summary>Automated Status: Operational</summary>
+    <p>Velocity: 12m/s</p>
+    <p>Direction: North</p>
+</details>
+<h3 id="dialog-boxes" tabindex="-1"><a href="#dialog-boxes"><span>Dialog boxes</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-dialog-element"><code>dialog</code></a> element represents a dialog box or pop-up box. A dialog
+can be either <em>non-modal</em> or <em>modal</em>.</p>
+<h4 id="non-modal-dialogs" tabindex="-1"><a href="#non-modal-dialogs"><span>Non-modal dialogs</span></a></h4>
+<p>When a non-modal dialog is open, it’s still possible to interact with the rest
+of the page.</p>
+<p><strong>Note</strong>: This interactive example requires JavaScript.</p>
+<p><button onclick="dialog.show()">Open dialog</button></p>
+<dialog id="dialog">
+    <p autofocus>
+        An open dialog. Press "Close" to dismiss this dialog.
+    </p>
+    <form method="dialog">
+        <button>Close</button>
+    </form>
+</dialog>
+<h4 id="modal-dialogs" tabindex="-1"><a href="#modal-dialogs"><span>Modal dialogs</span></a></h4>
+<p>When a modal dialog is open, only the content within the dialog can be
+interacted with.</p>
+<p><strong>Note</strong>: This interactive example requires JavaScript.</p>
+<p><button onclick="modal.showModal()">Open modal dialog</button></p>
+<dialog id="modal">
+    <p autofocus>
+        An open modal dialog. Press "Close" or the <kbd>Esc</kbd> key to
+        dismiss this dialog.
+    </p>
+    <form method="dialog">
+        <button>Close</button>
+    </form>
+</dialog>
+<h2 id="scripting" tabindex="-1"><a href="#scripting"><span>Scripting</span></a></h2>
+<h3 id="dynamic-scripts" tabindex="-1"><a href="#dynamic-scripts"><span>Dynamic scripts</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-script-element"><code>script</code></a> element is used to include dynamic script or data blocks
+into a page.</p>
+<p>In the example below, a message is displayed stating whether JavaScript is
+enabled in your web browser. A <code>script</code> element is used to update the message
+to indicate that JavaScript is enabled, if JavaScript is in fact enabled.
+Otherwise, some default text is displayed which states that JavaScript is
+disabled. This message will change if you enable or disable JavaScript and
+reload the page.</p>
+<p>
+    JavaScript is <strong id="script-example">disabled</strong> in your web
+    browser.
+</p>
+<script>
+    var element = document.getElementById("script-example");
+    if ("textContent" in element) {
+        element.textContent = "enabled";
+    } else {
+        element.innerText = "enabled";
+    }
+</script>
+<p>The <a href="https://html.spec.whatwg.org/#the-noscript-element"><code>noscript</code></a> element can be used to show content only if
+scripting is disabled.</p>
+<noscript>
+    <p>JavaScript really is <strong>disabled</strong> in your web browser.</p>
+</noscript>
+<h3 id="content-template" tabindex="-1"><a href="#content-template"><span>Content template</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-template-element"><code>template</code></a> element is used to declare fragments of HTML that
+can be cloned and inserted in the document by script.</p>
+<!-- No example yet -->
+<h3 id="web-component-slots" tabindex="-1"><a href="#web-component-slots"><span>Web component slots</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-slot-element"><code>slot</code></a> element represents a placeholder inside a
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components">web component</a>.</p>
+<!-- No example yet -->
+<h3 id="canvas" tabindex="-1"><a href="#canvas"><span>Canvas</span></a></h3>
+<p>The <a href="https://html.spec.whatwg.org/#the-canvas-element"><code>canvas</code></a> element represents a bitmap canvas that can be used to
+draw graphics and animations on the fly.</p>
+<p><strong>Note</strong>: This interactive example requires JavaScript.</p>
+<figure>
+    <canvas id="canvas-example" aria-labelledby="canvas-example-label">
+        <p>
+            Your web browser doesn't support the <code>canvas</code> element.
+            <a href="https://browsehappy.com/">Update your web browser</a> to
+            see this example in action.
+        </p>
+    </canvas>
+    <figcaption id="canvas-example-label">
+        An example of the <code>canvas</code> element, a blue rectangle.
+    </figcaption>
+</figure>
+<script>
+    var canvas = document.getElementById("canvas-example");
+    if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#3300f5";
+        ctx.fillRect(0, 0, 133, 106);
+    } else {
+        // An attempt at showing fallback content if the canvas element is not
+        // supported.
+        while (canvas.hasChildNodes()) {
+            canvas.parentNode.insertBefore(canvas.firstChild, canvas);
+        }
+        canvas.parentNode.removeChild(canvas);
+    }
+</script>
+<footer>
+<h2 id="footnotes-heading">Footnotes</h2>
+<ol>
+<li id="fn:1"><p>See <a href="https://meiert.com/en/blog/the-number-of-html-elements/">On the Difficulty of Counting the Number of HTML Elements</a>,
+for a discussion of how to answer the question “How many HTML elements are
+there?”. This page includes elements that appear in the current specification,
+the <a href="https://html.spec.whatwg.org/">HTML Living Standard</a>, to count the number
+of elements. As of 19 May 2023, there are 114 HTML elements, if we
+include <code>&lt;math&gt;</code> and <code>&lt;svg&gt;</code>. <a href="#fnref:1" aria-label="Back to content">↩︎</a></p>
+</li>
+</ol>
+</footer>
+
+    </main>
+</body>
+</html>

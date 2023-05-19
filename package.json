@@ -1,0 +1,25 @@
+{
+  "name": "html-elements-test-page",
+  "version": "1.0.0",
+  "description": "Examples of most of the elements of HTML.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Chris Wrench <c.g.wrench@gmail.com>",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "@11ty/eleventy": "2.0.1",
+    "markdown-it-anchor": "8.6.7",
+    "markdown-it-attrs": "4.1.6",
+    "markdown-it-container": "3.0.0",
+    "markdown-it-footnote": "3.0.3",
+    "markdown-it-ins": "3.0.1",
+    "markdown-it-mark": "3.0.1",
+    "markdown-it-sub": "1.0.0",
+    "markdown-it-sup": "1.0.0",
+    "markdown-it-table-of-contents": "0.6.0",
+    "smartypants": "0.1.6"
+  }
+}
