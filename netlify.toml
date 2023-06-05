@@ -10,3 +10,8 @@
         X-Content-Type-Options = "nosniff"
         Referrer-Policy= "no-referrer-when-downgrade"
         Permissions-Policy = "interest-cohort=()"
+
+[[headers]]
+    for = "/sample-files/*"
+    [headers.values]
+        X-Frame-Options = "SAMEORIGIN"
