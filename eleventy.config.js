@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("absoluteUrl", function(url, base) {
-        return (new URL(url, base)).toString()
+        return (new URL(url, base)).toString();
     });
     
     const makeHeaderLink = markdownItAnchor.permalink.headerLink({
@@ -38,12 +38,6 @@ module.exports = function(eleventyConfig) {
             slugify: eleventyConfig.getFilter("slugify")
         })
         .use(require("markdown-it-attrs"))
-        // TODO use https://github.com/hilookas/markdown-it-directive instead?
-        .use(require("markdown-it-container"), "warning") // TODO other containers, remark seems better here, what about inline and leaf containers?
-        .use(require("markdown-it-ins"))
-        .use(require("markdown-it-mark"))
-        .use(require("markdown-it-sub"))
-        .use(require("markdown-it-sup"))
         .use(footnotes)
         .use(table)
         .use(tableOfContents)
@@ -55,24 +49,18 @@ module.exports = function(eleventyConfig) {
     // https://www.11ty.dev/docs/languages/custom/#overriding-a-built-in-template-language
     eleventyConfig.setLibrary("md", markdown);
 
-    // TODO use markdown-it-bracketed-spans?
-    // TODO use markdown-it-image-figures?
-    // TODO use markdown-it-attribution?
-
     eleventyConfig.addFilter("markdown", (content) => {
         return markdown.renderInline(content);
     });
 
     function getDefaultRenderer(md, rule) {
         return md.renderer.rules[rule] || function (tokens, idx, options, env, self) {
-            return self.renderToken(tokens, idx, options)
+            return self.renderToken(tokens, idx, options);
         }
     }
-    
+
     function typographer(md) {
         const defaultTextRenderer = getDefaultRenderer(md, "text");
-
-        // TODO what else do we want from https://html.spec.whatwg.org/#named-character-references
 
         md.renderer.rules.text = (tokens, idx, options, env, self) => {
             // Improve factions
@@ -122,19 +110,13 @@ module.exports = function(eleventyConfig) {
             return defaultTextRenderer(tokens, idx, options, env, self);
         }
     }
-
     
-    // TODO Make the table of contents more accessible, use `nav`, accessible name etc.
     function tableOfContents(md) {
         md.use(require("markdown-it-table-of-contents"), {
             includeLevel: [2, 3],
             slugify: eleventyConfig.getFilter("slugify")
         });
 
-        // TODO https://github.com/x-govuk/govuk-eleventy-plugin/blob/d17d7049f5f0eba78035006c0225c557bfcf6c0b/lib/markdown-it/table-of-contents.js
-        // Overwrite the default table of contents container to replace a
-        // redundant `div` with a semantic `nav`.
-        // TODO what does an accessible table of contents look like?
         const { rules } = md.renderer;
 
         rules.toc_open = () => "<nav aria-labelledby=\"toc-heading\">" +
@@ -146,7 +128,6 @@ module.exports = function(eleventyConfig) {
     function footnotes(md) {
         md.use(require("markdown-it-footnote"));
 
-        // https://github.com/x-govuk/govuk-eleventy-plugin/blob/d17d7049f5f0eba78035006c0225c557bfcf6c0b/lib/markdown-it/footnote.js
         const { rules } = md.renderer;
 
         rules.footnote_ref = (tokens, idx, options, env, self) => {
@@ -168,12 +149,9 @@ module.exports = function(eleventyConfig) {
             }
 
             // ↩ using unicode escape code to prevent display as emoji on iOS
-            // TODO replace aria-label with visually hidden text
             return ` <a href="#fnref:${id}" aria-label="Back to content">\u21a9\uFE0E</a>`;
         };
 
-        // TODO this heading link doesn't match others, e.g. no anchor around it.
-        // TODO use `makeHeaderLink` somehow.
         rules.footnote_block_open = () =>
             "<footer>\n<h2 id=\"footnotes-heading\">Footnotes</h2>\n<ol>\n";
 
@@ -192,7 +170,6 @@ module.exports = function(eleventyConfig) {
     }
 
     function table(md) {
-        // TODO https://github.com/x-govuk/govuk-eleventy-plugin/blob/d17d7049f5f0eba78035006c0225c557bfcf6c0b/lib/markdown-it/table.js
         const { rules } = md.renderer;
 
         const defaultRenderer = rules.table_open || function (tokens, idx, options, env, self) {
