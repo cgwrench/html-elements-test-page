@@ -884,7 +884,7 @@ should see a link to download the video instead.
 <figure>
     <video controls width="320" height="180" id="video-example" aria-labelledby="video-example-label">
         <source src="/sample-files/sample.mp4" type="video/mp4" onerror="fallback(parentNode)">
-        <track default kind="captions" srclang="en" src="/sample-files/test.vtt">
+        <track default kind="captions" srclang="en" src="/sample-files/sample.vtt">
         <p>
             Your web browser doesn't support playing this video. You can
             download this video, 
