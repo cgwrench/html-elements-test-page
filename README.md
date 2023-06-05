@@ -1,7 +1,7 @@
 # HTML elements test page
 
-This repository contains a single [HTML document](index.html) that includes
-examples of most of the
+This repository contains a single [HTML document](_site/index.html) that
+includes examples of most of the
 [elements of HTML](https://html.spec.whatwg.org/multipage/semantics.html#semantics).
 
 This can be used to explore default

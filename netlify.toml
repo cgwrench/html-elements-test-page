@@ -1,0 +1,17 @@
+[build]
+    command = "npx @11ty/eleventy"
+    publish = "_site"
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        X-Frame-Options = "DENY"
+        X-XSS-Protection = "1; mode=block"
+        X-Content-Type-Options = "nosniff"
+        Referrer-Policy= "no-referrer-when-downgrade"
+        Permissions-Policy = "interest-cohort=()"
+
+[[redirects]]
+    from = "*"
+    to = "/"
+    status = 200
