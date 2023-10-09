@@ -1144,7 +1144,7 @@ various input types.
 
 <form method="get">
     <div>
-        <label>Hidden</label>
+        <label for="input-type-hidden-example">Hidden</label>
         <p id="input-type-hidden-description">
             A control that is not displayed but whose value is submitted to the
             server with the rest of the form. There is an example here, but
