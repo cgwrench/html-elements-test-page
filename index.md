@@ -1142,7 +1142,7 @@ element.
 The following form includes examples of the `input` element, including it's
 various input types.
 
-<form method="get">
+<form method="get" autocomplete="off">
     <div>
         <label for="input-type-hidden-example">Hidden</label>
         <p id="input-type-hidden-description">
