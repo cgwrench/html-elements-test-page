@@ -523,8 +523,8 @@ with him.
 The [`dfn`][dfn] element represents the defining instance of a term. For
 example:
 
-The <dfn><abbr title="Garage Door Opener">GDO</abbr></dfn> is a device that
-allows off-world teams to open the iris.
+The <dfn id="gdo"><abbr title="Garage Door Opener">GDO</abbr></dfn> is a device
+that allows off-world teams to open the iris.
 
 [...]
 
