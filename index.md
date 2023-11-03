@@ -725,9 +725,11 @@ using a `wbr` element.
 
 The [`ins`][ins] element represents an addition to the page. For example:
 
-<ins datetime="2005-03-16 00:00Z">
-    <p>I like fruit.</p>
-</ins>
+<p>
+    <ins datetime="2005-03-16 00:00Z">
+        <p>I like fruit.</p>
+    </ins>
+</p>
 
 ### Deletions
 
