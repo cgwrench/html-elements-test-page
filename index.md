@@ -573,8 +573,8 @@ Today is <time datetime="2011-11-18">Friday</time>.
 
 The code element represents a fragment of computer code. For example:
 
-When you call the `activate()` method on the `robotSnowman` object, the eyes
-glow.
+When you call the <code>activate()</code> method on the
+<code>robotSnowman</code> object, the eyes glow..
 
 ### Variables
 
