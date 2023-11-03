@@ -672,7 +672,7 @@ The [`bdi`][bdi] element represents a span of text that is to be isolated from
 it's surroundings for the purposes of bidirectional text formatting. For
 example:
 
-The recommended restaurant is <bdi lang="">My Juice Café (At The Beach)</bdi>.
+The recommended restaurant is <bdi>My Juice Café (At The Beach)</bdi>.
 
 The [`bdo`][bdo] element represents explicit text directionality formatting
 control for its children. It allows authors to override the Unicode
@@ -680,7 +680,7 @@ bidirectional algorithm by explicitly specifying a direction override. For
 example:
 
 The proposal is to write English, but in reverse order. "Juice" would become
-"<bdo dir=rtl>Juice</bdo>">
+"<bdo dir="rtl">Juice</bdo>".
 
 ### Content spans
 
