@@ -3,6 +3,7 @@ layout: base.njk
 title: HTML elements test page
 description: Examples of the elements of HTML
 date: 2023-05-19
+updated: 2023-11-03
 ---
 # HTML elements test page { #html-elements-test-page }
 
@@ -40,7 +41,7 @@ the [HTML Living Standard](https://html.spec.whatwg.org/), to count the number
 of elements. As of {{ page.date | date }}, there are 114 HTML elements, if we
 include `<math>` and `<svg>`.
 
-This page was last updated on {{ page.date | date }}.
+This page was last updated on {{ page.updated | date }}.
 
 If you've got any questions or comments about this page, or if you've found a
 mistake, please [get in touch](mailto:{{ site.author.email }}).
