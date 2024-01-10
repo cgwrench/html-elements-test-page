@@ -981,29 +981,28 @@ click on a shape.
 The [`math`][math] element represents mathematical notations, as defined by
 [MathML](https://www.w3.org/TR/MathML/).
 
-<p>
-    For example, here is the
-    <a href="https://en.wikipedia.org/wiki/Quadratic_equation">quadratic equation</a>
-    expressed in MathML:
-    <math>
-        <mi>x</mi>
-        <mo>=</mo>
-        <mfrac>
-          <mrow>
-          <mo form="prefix">−</mo> <mi>b</mi>
-          <mo>±</mo>
-          <msqrt>
-              <msup> <mi>b</mi> <mn>2</mn> </msup>
-              <mo>−</mo>
-              <mn>4</mn> <mo>⁢</mo> <mi>a</mi> <mo>⁢</mo> <mi>c</mi>
-          </msqrt>
-          </mrow>
-          <mrow>
-          <mn>2</mn> <mo>⁢</mo> <mi>a</mi>
-          </mrow>
-        </mfrac>
-    </math>
-</p>
+For example, here is the
+[quadratic equation](https://en.wikipedia.org/wiki/Quadratic_equation)
+expressed in MathML:
+
+<math display="block">
+    <mi>x</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+      <mo form="prefix">−</mo> <mi>b</mi>
+      <mo>±</mo>
+      <msqrt>
+          <msup> <mi>b</mi> <mn>2</mn> </msup>
+          <mo>−</mo>
+          <mn>4</mn> <mo>⁢</mo> <mi>a</mi> <mo>⁢</mo> <mi>c</mi>
+      </msqrt>
+      </mrow>
+      <mrow>
+      <mn>2</mn> <mo>⁢</mo> <mi>a</mi>
+      </mrow>
+    </mfrac>
+</math>
 
 **Note**: You'll want to provide an accessible
 [fallback for browsers without MathML support](https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring#fallback_for_browsers_without_mathml_support).
