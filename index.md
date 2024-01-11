@@ -3,7 +3,7 @@ layout: base.njk
 title: HTML elements test page
 description: Examples of the elements of HTML
 date: 2023-05-19
-updated: 2023-11-03
+updated: 2024-01-11
 ---
 # HTML elements test page { #html-elements-test-page }
 
@@ -1479,18 +1479,22 @@ task. Progress is either _determinate_ or _indeterminate_.
 A determinate progress bar indicates the fraction of work that has so far been
 completed. For example:
 
-<label>
-    Progress:
-    <progress value="50" max="100">50%</progress>
-</label>
-
+<p>
+    <label>
+        Progress:
+        <progress value="50" max="100">50%</progress>
+    </label>
+</p>
+  
 An indeterminate indicates that progress is being made but that it is not
 clear how much more work remains to be done before the task is complete. For
 example: 
 
 <div aria-busy="true" aria-describedby="progress-bar"></div>
-<progress id="progress-bar" aria-label="Example loading state…"></progress>
-
+<p>
+    <progress id="progress-bar" aria-label="Example loading state…"></progress>
+</p>
+  
 ### Scalar measures
 
 The [`meter`][meter] element represents a scalar measurement within a known
@@ -1499,13 +1503,15 @@ range, or a fractional value.
 In this example, the `meter` element is used to describe the amount of disk
 space used, out of a known amount of total space available.
 
-<label>
-    Disk usage:
-    <meter min="0" value="170261928" max="233257824">
-        170,261,928 bytes used out of 233,257,824 bytes available
-    </meter>
-</label>
-
+<p>
+    <label>
+        Disk usage:
+        <meter min="0" value="170261928" max="233257824">
+            170,261,928 bytes used out of 233,257,824 bytes available
+        </meter>
+    </label>
+</p>
+    
 ### Form control groups
 
 The [`fieldset`][fieldset] element represents a set of form controls grouped
